@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Play game</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+               font-size: 18px;
+          }
+
+          main {
+               max-width: 1200px;
+               /* border: 1px solid red; */
+               margin: auto;
+               margin-top: 2rem;
+          }
+
+          table {
+               width: 100%;
+               border-collapse: collapse;
+               border: 2px solid #fed330;
+          }
+
+          th {
+               padding: 1rem;
+               text-align: center;
+               background-color: #fed330;
+          }
+
+          td {
+               padding: 0.2rem 0.5rem;
+               text-align: center;
+          }
+
+          td:first-child {
+               background-color: #fed330;
+          }
+
+          input {
+               width: 100%;
+               padding: 0.5rem 1rem;
+               border-radius: 0.5rem;
+               border: none;
+               outline-color: #f7b731;
+          }
+
+          button {
+               padding: 1rem 2rem;
+               margin: 0.5rem 0rem;
+               background-color: #fed330;
+               border-radius: 1rem;
+               border: none;
+          }
+
+          button:hover {
+               background-color: #f7b731;
+               border: none;
+               color: white;
+          }
+     </style>
+</head>
+
+<body>
+     <main>
+          <div>
+               <div>
+                    <table>
+                         <tr>
+                              <thead id="player">
+                                   <!-- ten player -->
+                              </thead>
+                         </tr>
+                         <tr>
+                              <td>Sum of scores</td>
+                              <td>0</td>
+                              <td>0</td>
+                              <td>0</td>
+                              <td>0</td>
+                         </tr>
+                         <tbody>
+                              <tr>
+                                   <td>Round 1</td>
+                                   <td>
+                                        <input type="number" />
+                                   </td>
+                                   <td>
+                                        <input type="number" />
+                                   </td>
+                                   <td>
+                                        <input type="number" />
+                                   </td>
+                                   <td>
+                                        <input type="number" />
+                                   </td>
+                              </tr>
+                         </tbody>
+
+                    </table>
+               </div>
+
+               <div>
+                    <button>Add round</button>
+               </div>
+
+          </div>
+
+     </main>
+     <script src="./playgame.js"></script>
+</body>
+
+</html>

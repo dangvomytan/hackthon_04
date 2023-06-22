@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Play game</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+               font-size: 18px;
+          }
+
+          main {
+               max-width: 1200px;
+               /* border: 1px solid red; */
+               margin: auto;
+               margin-top: 2rem;
+          }
+
+          table {
+               width: 100%;
+               border-collapse: collapse;
+          }
+
+          th {
+               padding: 1rem;
+               text-align: center;
+               background-color: #fed330;
+          }
+
+          td {
+               padding: 0.2rem 0.5rem;
+               text-align: center;
+               background-color: #d1d8e0;
+          }
+
+
+          input {
+               width: 100%;
+               padding: 0.5rem 1rem;
+               border-radius: 0.5rem;
+               border: none;
+               outline-color: #f7b731;
+          }
+
+          span {
+               padding: 2rem;
+               color: red;
+               font-size: 1.2em;
+          }
+
+          button {
+               padding: 1rem 2rem;
+               margin: 0.5rem 0rem;
+               background-color: #fed330;
+               border-radius: 1rem;
+               border: none;
+          }
+
+          button:hover {
+               background-color: #f7b731;
+               border: none;
+               color: white;
+          }
+     </style>
+</head>
+
+<body>
+     <main>
+          <div>
+               <form  action="" id="createForm">
+                    <div>
+                         <table>
+                              <tr>
+                                   <th>Scores keeper</th>
+                              </tr>
+                              <tr>
+
+                              </tr>
+                              <tr>
+                                   <td>
+                                        <input type="text" placeholder="Enter Player name" id="player_1"/>
+                                   </td>
+                              </tr>
+                              <tr>
+                                   <td>
+                                        <input type="text" placeholder="Enter Player name" id="player_2"/>
+                                   </td>
+                              </tr>
+                              <tr>
+                                   <td>
+                                        <input type="text" placeholder="Enter Player name" id="player_3"/>
+                                   </td>
+                              </tr>
+                              <tr>
+                                   <td>
+                                        <input type="text" placeholder="Enter Player name" id="player_4"/>
+                                   </td>
+                              </tr>
+                              <tr>
+                                   <td>
+                                        <!-- <span>Please input player name !!</span> -->
+                                   </td>
+                              </tr>
+                         </table>
+                    </div>
+
+                    <div>
+                         <button type="submit">Add round</button>
+                    </div>
+               </form>
+          </div>
+
+     </main>
+     <script src="/createUser.js"></script>
+</body>
+
+</html>

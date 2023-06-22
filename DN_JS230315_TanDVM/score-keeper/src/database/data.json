@@ -1,0 +1,22 @@
+[
+     {
+          "id":1,
+          "round":"round 1",
+          "player":[
+               {"name":"tan","point":"2"},
+               {"name":"tung","point":"2"},
+               {"name":"phuc","point":"2"},
+               {"name":"hoang","point":"2"}
+     ]   
+     },
+     {
+          "id":2,
+          "round":"round 2",
+          "player":[
+               {"name":"tan","point":"3"},
+               {"name":"tung","point":"7"},
+               {"name":"phuc","point":"5"},
+               {"name":"hoang","point":"8"}
+     ]   
+     }
+]
