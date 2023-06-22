@@ -26,14 +26,14 @@ route.get('/:id', (req, res) => {
 
       const convertData = JSON.parse(data);
       //
-      const finalUser = convertData.find((user) => user.id == id);
-      if (!finalUser) {
-         res.status(404).json({ message: 'user not found !' });
+      const finalData = convertData.find((item) => item.id == id);
+      if (!finalData) {
+         res.status(404).json({ message: 'not found !' });
       }
-      res.status(200).json(finalUser);
+      res.status(200).json(finalData);
    });
 });
-// ADD User
+// ADD
 route.post('/', (req, res) => {
    // console.log("body",req.body);
    fs.readFile(dataPath, (error, data) => {
@@ -41,14 +41,14 @@ route.post('/', (req, res) => {
          res.status(500).send('Error: server');
       }
       const convertData = JSON.parse(data);
-         const newUser = {
-            id: req.body.id,
-            userId: req.body.userId,
-            title: req.body.title,
-            body:req.body.body,
-         };
-         console.log('newUser', newUser);
-         convertData.push(newUser);
+      const newUser = {
+         id: req.body.id,
+         userId: req.body.userId,
+         title: req.body.title,
+         body: req.body.body,
+      };
+      console.log('newUser', newUser);
+      convertData.push(newUser);
       fs.writeFile(dataPath, JSON.stringify(convertData), (error, data) => {
          if (error) {
             res.status(500).send('Error can not create');
@@ -65,7 +65,7 @@ route.delete('/:id', (req, res) => {
          res.status(500).send('Error: server error');
       }
       const convertData = JSON.parse(data);
-      const filterData = convertData.filter((user) => user.id != id);
+      const filterData = convertData.filter((data) => data.id != id);
       fs.writeFile(dataPath, JSON.stringify(filterData), (error, data) => {
          if (error) {
             res.status(400).send('Error can not delete');
@@ -75,28 +75,28 @@ route.delete('/:id', (req, res) => {
    });
 });
 //UPDATE
-route.put("/:id",(req, res) => {
-     fs.readFile(dataPath, (error, data) => {
-       const id = req.params.id;
-       console.log(id);
-       if (error) {
-         res.status(500).send("Error: error read database");
-       }
-       const convertData = JSON.parse(data);
-       const findIndex = convertData.findIndex((item) => item.id == id);
-       if (findIndex == -1) {
-         res.status(404).json({ message: "Question not found" });
-       } else {
+route.put('/:id', (req, res) => {
+   fs.readFile(dataPath, (error, data) => {
+      const id = req.params.id;
+      console.log(id);
+      if (error) {
+         res.status(500).send('Error: error read database');
+      }
+      const convertData = JSON.parse(data);
+      const findIndex = convertData.findIndex((item) => item.id == id);
+      if (findIndex == -1) {
+         res.status(404).json({ message: 'Question not found' });
+      } else {
          convertData[findIndex] = Object.assign({}, convertData[findIndex], {
-           ...req.body,
+            ...req.body,
          });
          fs.writeFile(dataPath, JSON.stringify(convertData), (error, data) => {
-           if (error) {
-             res.status(500).send("Error: error write database");
-           }
-           res.status(200).json({ message: "Update successfully" });
+            if (error) {
+               res.status(500).send('Error: error write database');
+            }
+            res.status(200).json({ message: 'Update successfully' });
          });
-       }
-     });
+      }
    });
+});
 module.exports = route;

@@ -4,6 +4,7 @@ const port = 8080;
 
 const userRouter = require('../router/User.route')
 const postRouter = require('../router/Post.route')
+const apiRouter = require('../router/api.route')
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -14,6 +15,7 @@ app.get('/',(req,res)=>{
 })
 app.use('/user',userRouter);
 app.use('/post',postRouter);
+app.use('/api/v1/users/',apiRouter);
 
 app.listen(port,()=>{
      console.log(`Sever express http://localhost:${port}`);
